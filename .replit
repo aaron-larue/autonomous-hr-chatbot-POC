@@ -1,0 +1,19 @@
+modules = ["python-3.10:v18-20230807-322e88b"]
+run = "streamlit run hr_agent_frontend.py"
+
+[nix]
+channel = "stable-23_05"
+
+[unitTest]
+language = "python3"
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix"]
+
+[deployment]
+run = ["sh", "-c", "run"]
+deploymentTarget = "cloudrun"
+
+[[ports]]
+localPort = 8501
+externalPort = 80
